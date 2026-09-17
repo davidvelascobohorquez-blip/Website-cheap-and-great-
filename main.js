@@ -116,11 +116,31 @@
     });
   }
 
+  // 3D tilt on service cards — fine-pointer/hover devices only.
+  // Functional micro-interaction: not gated by reduced-motion (mouse-driven, not a loop).
+  function initCardTilt() {
+    if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    $$(".service-card").forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        var rx = (py * -6).toFixed(2);
+        var ry = (px * 8).toFixed(2);
+        card.style.transform = "perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-6px)";
+      });
+      card.addEventListener("mouseleave", function () {
+        card.style.transform = "";
+      });
+    });
+  }
+
   function boot() {
     safe(initNav, "initNav");
     safe(initReveals, "initReveals");
     safe(initYear, "initYear");
     safe(initLang, "initLang");
+    safe(initCardTilt, "initCardTilt");
     document.documentElement.classList.add("is-ready");
   }
 
