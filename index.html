@@ -14,10 +14,12 @@
 <meta property="og:locale" content="es_US">
 <meta name="twitter:card" content="summary">
 
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="image" href="assets/logo.webp" fetchpriority="high">
 <link rel="stylesheet" href="styles.css?v=20260917">
 <noscript><style>[data-reveal]{opacity:1!important;transform:none!important;}</style></noscript>
 
@@ -26,7 +28,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Cheap & Great Tree Service",
-  "image": "https://cheapandgreattreeservices.com/charlotte/assets/favicon.svg",
+  "image": "https://cheapandgreattreeservices.com/charlotte/assets/logo.webp",
   "telephone": "+1-704-712-5488",
   "url": "https://cheapandgreattreeservices.com/charlotte/",
   "areaServed": {
@@ -60,7 +62,6 @@
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5.2l3.6 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7 2.6v5.4c0 4.6-3 7.8-7 9-4-1.2-7-4.4-7-9V6.1l7-2.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-broom" viewBox="0 0 24 24"><path d="M14 3l6 6-2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 6.4L4 15c-1 1-1 2.4 0 3.2 1 .8 2.4.8 3.2 0l8.6-8.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 21l2-4M8 21l1.4-3.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
-    <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 2.5l4 5.5h-2.4l3.4 4.6h-2.6L18 18h-4.6V22h-2.8v-4H6l3.6-5.4H7L10.4 8H8l4-5.5Z" fill="currentColor" stroke="none"/></symbol>
     <symbol id="i-saw" viewBox="0 0 24 24"><path d="M3 14.5c1.5-1.6 3.2-2.4 5.6-2.4 3.4 0 4.9 2 8 2 2 0 3.4-.7 4.4-1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 12.1V9.6M9.2 12.1v-3M12.4 12.1v-3.6M15.6 12.1V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 16.5l2.6 3.6M20.5 12.6l1.3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
     <symbol id="i-stump" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="5.2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
     <symbol id="i-storm" viewBox="0 0 24 24"><path d="M7.5 15.5a4 4 0 0 1 .6-8 5 5 0 0 1 9.6.6 3.6 3.6 0 0 1-.6 7.1H8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13 15.5l-2.4 3.6h2.2L11 22.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -80,11 +81,7 @@
 <header class="nav" data-nav>
   <div class="container nav-inner">
     <a class="brand" href="#top" aria-label="Cheap & Great Tree Service — inicio">
-      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tree"></use></svg>
-      <span class="brand-name">
-        Cheap <em>&amp;</em> Great
-        <span class="brand-sub">Tree Service · Charlotte, NC</span>
-      </span>
+      <img class="brand-logo" src="assets/logo.webp" alt="Cheap & Great Tree Service" width="900" height="481">
     </a>
 
     <nav class="nav-links" data-nav-links data-open="false" aria-label="Navegación principal">
@@ -141,24 +138,8 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <svg class="hero-illustration" viewBox="0 0 520 460" role="img" aria-label="Ilustración de un árbol con un corte diagonal, marca del servicio">
-          <defs>
-            <linearGradient id="canopyGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#2F4F37"/>
-              <stop offset="100%" stop-color="#1B2E20"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="260" cy="420" rx="200" ry="18" fill="#E2DFCF"/>
-          <rect x="242" y="230" width="26" height="170" rx="6" fill="#3B3226"/>
-          <circle cx="255" cy="180" r="120" fill="url(#canopyGrad)"/>
-          <circle cx="150" cy="230" r="70" fill="#24402C"/>
-          <circle cx="370" cy="230" r="78" fill="#24402C"/>
-          <path d="M40 260 L480 150 L480 200 L40 310 Z" fill="#E2792C" opacity="0.92"/>
-          <path d="M40 260 L480 150" stroke="#C4611C" stroke-width="4"/>
-          <path d="M40 310 L480 200" stroke="#C4611C" stroke-width="4"/>
-          <circle cx="430" cy="70" r="26" fill="#F3D9BE"/>
-        </svg>
+      <div class="hero-visual">
+        <img class="hero-logo" src="assets/logo.webp" alt="Cheap & Great Tree Service — logo con avispón" width="900" height="481" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -232,13 +213,13 @@
   </section>
 
   <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><polygon points="0,0 1440,80 0,80" fill="#1B2E20"/></svg>
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><polygon points="0,0 1440,80 0,80" fill="#17140F"/></svg>
   </div>
 
   <!-- ============================================================
        Manifesto / promise — the name IS the pitch
        ============================================================ -->
-  <section class="section section--forest">
+  <section class="section section--dark">
     <div class="container promise-wrap">
       <div class="promise-lede" data-reveal>
         <p class="kicker">Nuestra manera de trabajar</p>
@@ -366,13 +347,13 @@
   </section>
 
   <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><polygon points="0,80 1440,0 1440,80" fill="#1B2E20"/></svg>
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><polygon points="0,80 1440,0 1440,80" fill="#17140F"/></svg>
   </div>
 
   <!-- ============================================================
        Testimonials — honest placeholders
        ============================================================ -->
-  <section class="section section--forest">
+  <section class="section section--dark">
     <div class="container">
       <div class="section-head" data-reveal>
         <p class="kicker">Reseñas</p>
@@ -443,13 +424,13 @@
   </section>
 
   <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><polygon points="0,80 1440,0 1440,80" fill="#1B2E20"/></svg>
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><polygon points="0,80 1440,0 1440,80" fill="#17140F"/></svg>
   </div>
 
   <!-- ============================================================
        Final CTA
        ============================================================ -->
-  <section class="section section--forest final-cta" id="contacto">
+  <section class="section section--dark final-cta" id="contacto">
     <div class="container">
       <p class="kicker" style="justify-content:center" data-reveal>Hablemos</p>
       <h2 data-reveal>¿Un árbol te está dando problemas?</h2>
@@ -477,8 +458,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a class="brand" href="#top">
-        <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tree"></use></svg>
-        <span class="brand-name">Cheap <em>&amp;</em> Great</span>
+        <img class="brand-logo" src="assets/logo.webp" alt="Cheap & Great Tree Service" width="900" height="481">
       </a>
       <p>Servicio de árboles en Charlotte, NC — poda, tala, tocones, desmonte de terrenos y emergencias.</p>
     </div>
