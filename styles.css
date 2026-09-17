@@ -196,6 +196,19 @@ h1, h2, h3, h4 {
 }
 .nav-links a:hover::after { right: 0; }
 
+.lang-switch {
+  display: flex; align-items: center; gap: 2px;
+  padding: 3px; border-radius: 999px; border: 1.5px solid var(--line-gold);
+}
+.lang-btn {
+  padding: .38rem .65rem; border-radius: 999px;
+  font-family: var(--font-display); font-size: .78rem; font-weight: 700; letter-spacing: .02em;
+  color: var(--text-mute);
+  transition: background-color .25s var(--ease-out), color .25s var(--ease-out);
+}
+.lang-btn.is-active { background: var(--gold); color: var(--ink); }
+.lang-btn:not(.is-active):hover { color: var(--text); }
+
 .nav-ctas { display: flex; align-items: center; gap: .6rem; }
 .nav-ctas .btn { padding: .7rem 1.15rem; font-size: .85rem; }
 .nav-call-text { display: none; }

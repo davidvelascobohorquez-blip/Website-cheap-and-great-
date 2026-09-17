@@ -72,10 +72,55 @@
     if (el) el.textContent = String(new Date().getFullYear());
   }
 
+  // Language toggle (EN default, ES available) — pure client-side swap.
+  // The served HTML is already valid, complete English content, so a user
+  // with JS disabled simply sees the English site (never a blank/broken page).
+  var LANG_KEY = "cg-lang";
+
+  function detectLang() {
+    try {
+      var stored = window.localStorage.getItem(LANG_KEY);
+      if (stored === "en" || stored === "es") return stored;
+    } catch (e) {}
+    var nav = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+    return nav.indexOf("es") === 0 ? "es" : "en";
+  }
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    $$("[data-en]").forEach(function (el) {
+      var value = el.getAttribute(lang === "es" ? "data-es" : "data-en");
+      if (value == null) return;
+      if (el.tagName === "META") el.setAttribute("content", value);
+      else el.textContent = value;
+    });
+    $$("[data-aria-en]").forEach(function (el) {
+      var value = el.getAttribute(lang === "es" ? "data-aria-es" : "data-aria-en");
+      if (value != null) el.setAttribute("aria-label", value);
+    });
+    $$("[data-lang-btn]").forEach(function (btn) {
+      btn.classList.toggle("is-active", btn.getAttribute("data-lang-btn") === lang);
+    });
+  }
+
+  function initLang() {
+    var buttons = $$("[data-lang-btn]");
+    if (!buttons.length) return;
+    applyLang(detectLang());
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var lang = btn.getAttribute("data-lang-btn");
+        applyLang(lang);
+        try { window.localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+      });
+    });
+  }
+
   function boot() {
     safe(initNav, "initNav");
     safe(initReveals, "initReveals");
     safe(initYear, "initYear");
+    safe(initLang, "initLang");
     document.documentElement.classList.add("is-ready");
   }
 
